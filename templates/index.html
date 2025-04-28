@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Code Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Merhaba, nasil bir Python kodu istiyorsunuz?</h1>
+
+        <form method="post" class="chat-input">
+            <input type="text" name="prompt" placeholder="Bir şey yazin..." required />
+            <button type="submit">
+                <span>&uarr;</span> 
+            </button>
+        </form>
+
+        {% if code %}
+        <div class="response">
+            <h2>{{ title }}</h2> 
+            <pre>{{ code }}</pre>
+        </div>
+        {% endif %}        
+    </div>
+</body>
+</html>
